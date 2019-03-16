@@ -6,12 +6,14 @@
     <thead>
       <th>Host</th>
       <th>Name</th>
+      <th>Stats</th>
     </thead>
     <tbody>
       {{#each queues}}
         <tr>
           <td>{{ this.hostId }}</td>
-          <td><a href="{{ ../basePath }}/{{ encodeURI this.hostId }}/{{ encodeURI this.name }}">{{ this.name }}</a></td>
+          <td><a href="{{ ../basePath }}/{{ encodeURI this.hostId }}/{{ encodeURI this.name }}">{{ this.name }}/</a></td>
+          <td>waiting:{{ this.waiting }} active:{{ this.active }} completed:{{ this.completed }} failed:{{ this.failed }} delayed:{{ this.delayed }}</td>
         </tr>
       {{/each}}
     </tbody>
